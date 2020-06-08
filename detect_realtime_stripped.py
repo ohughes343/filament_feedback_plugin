@@ -19,7 +19,7 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 #initialize camera
 camera = PiCamera()
 camera.resolution = (640, 480)
-camera.framerate = 10
+camera.framerate = 30
 rawCapture = PiRGBArray(camera, size = (640,480))
 
 
