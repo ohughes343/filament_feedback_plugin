@@ -71,9 +71,7 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
         #width.append(0)
         for j in range(pt1[0],pt2[0],1):
             k = result[i,j]
-            if k.all() != 0:
-                is_white=True
-                width[i]+=1
+        if k.all() != 0:width[i]+=1
                 
     filament_width_px = sum(width) / len(width)
     filament_width_mm = filament_width_px * mm_to_px_ratio
@@ -106,9 +104,6 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
     
     #color
     #cv2.imshow("result", result)
-    
-    #clear array
-    width = []
 
     key = cv2.waitKey(1)
     rawCapture.truncate(0)
