@@ -90,7 +90,7 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
     
     
     #write the filament diameter on the image
-    cv2.putText(image, str(width), (100,100), font, 1, (255,255,255), 2, cv2.LINE_AA)
+    cv2.putText(image, str(width), (100,100), font, 1, (0,0,0), 2, cv2.LINE_AA)
     
     #draw rectangle around scanned area
     cv2.rectangle(image,pt1,pt2,(255,0,0),1)
