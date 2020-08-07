@@ -40,6 +40,20 @@ class FilamentFeedbackPlugin(octoprint.plugin.TemplatePlugin,
         #get the command from commander.py
         rate=measure.change_extrusion_rate() 
 
+        if command == None:
+            return
+
+        else:
+            try:
+                this_command = self.command_definitions[command]
+                self._logger.info("Command found for 'action:%s'" % (command))
+            except:
+                self._logger.error("No command found for 'action:%s'" % command)
+                return (None,)
+        
+        if this_command["enabled"] == True:
+            self._logger.info("Command 'action:%s' is enabled" % command)
+
         if rate=None:
             return
         else:
